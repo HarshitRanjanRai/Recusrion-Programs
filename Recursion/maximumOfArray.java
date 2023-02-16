@@ -1,33 +1,19 @@
-import java.util.*;
- class maximumOfArray {
+class maximumOfArray{
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Enter Number: ");
-        int n=sc.nextInt();
-        int[] arr=new int[n];
-        for(int i=0;i<n;i++)
-        {
-            arr[i]=sc.nextInt();
-        }
-      
-        
-        System.out.println("Max is "+reverseDisplay(arr,0));
+        int[] arr={1,2,3,4,32,45,65,43,21,12,45,87,54,5,3,0};// ID array
+        System.out.println("Max Number is: "+max(arr,0));
     }
-
-    static int reverseDisplay(int[] arr, int index)
+    static int max(int[] arr,int index)
     {
-        
-        if(index==arr.length-1)
-        return arr[index];
-
-        int max= reverseDisplay(arr,index+1);
-        if(max>arr[index])
+        if(arr.length==index)
         {
-            return max;
+            return 0;
         }
-        else
-        return arr[index];
-
-        
+        int max1=max(arr,index+1);
+        if(max1>arr[index])
+        {
+            return max1;
+        }
+        else return arr[index];
     }
 }
